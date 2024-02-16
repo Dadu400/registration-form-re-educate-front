@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-black min-h-screen flex justify-center items-center">
+<div class="bg-[#18181b] w-full max-w-xl mx-4 md:mx-auto p-12 rounded-lg">
+    <div class="bg-[#FFFFFF] rounded-lg grid grid-cols-2 gap-4">
+        <button onclick="window.location.href='{{ route('registration-view') }}'"
+            class="flex items-center justify-center h-full px-4 py-2 text-center text-[16px] md:text-[20px] font-medium text-[#91c6ea] rounded-s-lg">ავტორიზაცია</button>
+        <button onclick="window.location.href='{{ route('login') }}'"
+            class="flex items-center justify-center h-full px-4 py-2 text-center text-[16px] md:text-[20px] text-white rounded-lg bg-[#91c6ea]">რეგისტრაცია</button>
+    </div>    
+    <form id="registrationForm" action="/request-otp" method="post"> @csrf <div class="mb-6" id="firstForm">
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-sm font-medium text-white">სახელი და გვარი</label>
+                <input type="text" name="name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block mb-2 text-sm font-medium text-white">ელ.ფოსტა</label>
+                <input type="email" name="email" class="bg-white border border-white text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block mb-2 text-sm font-medium text-white">ტელეფონი</label>
+                <input type="text" name="phone" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+            </div>
+            <div class="mb-2">
+                    <label for="password" class="block mb-2 text-sm font-medium text-white">პაროლი</label>
+                <input type="password" name="password" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+            </div>
+            <button type="submit" class="text-white bg-[#91c6ea] mt-[30px] focus:outline-none font-semibold rounded-lg text-[20px] w-full px-5 py-2.5 text-center"> კოდის მოთხოვნა </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
